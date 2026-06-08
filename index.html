@@ -1434,4 +1434,173 @@ options:["nevertheless","because","therefore","for example"],
 e:"Қазақша: nevertheless contrast көрсетеді. Русский: nevertheless signals contrast."
 }
 ]
-},
+}
+  ];
+
+function shuffle(arr){
+  const a=[...arr];
+  for(let i=a.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+function norm(text){
+  return String(text||"")
+    .toLowerCase()
+    .replace(/\s+/g," ")
+    .replace(/[.,;:!?()«»"']/g,"")
+    .trim();
+}
+
+function render(){
+  const nav=document.getElementById("nav");
+  const app=document.getElementById("app");
+
+  nav.innerHTML=DATA.map((unit,i)=>`
+    <a href="#${unit.id}">Unit ${i+1}</a>
+  `).join("");
+
+  app.innerHTML=DATA.map((unit,ui)=>{
+    const questionsHTML=unit.questions.map((item,qi)=>{
+      item.options=shuffle(item.options);
+      item.correctIndex=item.options.findIndex(opt=>norm(opt)===norm(item.a));
+
+      return `
+        <div class="q">
+          <div class="qtag">Must-know test</div>
+          <div class="qtitle">${qi+1}. ${item.q}</div>
+          ${item.options.map((opt,oi)=>`
+            <label class="opt">
+              <input type="radio" name="u${ui}-q${qi}" value="${oi}">
+              ${String.fromCharCode(65+oi)}) ${opt}
+            </label>
+          `).join("")}
+        </div>
+      `;
+    }).join("");
+
+    return `
+      <section class="card" id="${unit.id}">
+        <div class="head">
+          <h2>${unit.title}</h2>
+          <div class="desc">
+            <b>Theme:</b> ${unit.theme}<br>
+            ${unit.desc}
+          </div>
+        </div>
+
+        <div class="langbox">
+          <div class="lang">${unit.kazakh}</div>
+          <div class="lang">${unit.russian}</div>
+        </div>
+
+        <div class="keybox">
+          <h3>Must-know points / Ең маңыздысы</h3>
+          <div class="grid">
+            ${unit.mustknow.map(k=>`<div class="pill">${k}</div>`).join("")}
+          </div>
+        </div>
+
+        <h3 style="color:#9d174d;margin-top:24px;">Test — 10 questions</h3>
+
+        ${questionsHTML}
+
+        <button class="btn" onclick="checkUnit(${ui})">
+          Нәтижені көрсету / Показать результат
+        </button>
+
+        <div class="result" id="result-${ui}"></div>
+      </section>
+    `;
+  }).join("") + `
+    <div class="footer">
+      Source: Skillful Reading & Writing Student’s Book 4 — Macmillan Academic Skills<br>
+      © @elnazm_ln
+    </div>
+  `;
+}
+
+function checkUnit(ui){
+  const unit=DATA[ui];
+  const box=document.getElementById("result-"+ui);
+
+  let score=0;
+  let html="";
+
+  unit.questions.forEach((item,qi)=>{
+    const selected=document.querySelector(`input[name="u${ui}-q${qi}"]:checked`);
+    const selectedIndex=selected ? Number(selected.value) : -1;
+    const ok=selectedIndex===item.correctIndex;
+
+    if(ok) score++;
+
+    const yourAnswer=selectedIndex>=0
+      ? `${String.fromCharCode(65+selectedIndex)}) ${item.options[selectedIndex]}`
+      : "Жауап таңдалмаған / Ответ не выбран";
+
+    const correctAnswer=`${String.fromCharCode(65+item.correctIndex)}) ${item.a}`;
+
+    html+=`
+      <div class="ans ${ok ? "ok" : "bad"}">
+        <div><b>${qi+1}. ${item.q}</b></div>
+
+        <div class="${ok ? "oktxt" : "badtxt"}">
+          ${ok ? "Дұрыс / Верно" : "Қате / Неверно"}
+        </div>
+
+        <div class="ex">
+          <b>Ваш ответ:</b><br>
+          ${yourAnswer}
+        </div>
+
+        <div class="ex">
+          <b>Правильный ответ:</b><br>
+          ${correctAnswer}
+        </div>
+
+        <div class="ex">
+          <b>Түсіндірме / Пояснение:</b><br>
+          ${item.e}
+        </div>
+      </div>
+    `;
+  });
+
+  const percent=Math.round(score/unit.questions.length*100);
+
+  box.innerHTML=`
+    <div class="summary">
+      <h3>${score} / ${unit.questions.length} дұрыс</h3>
+      <p>Результат: <b>${percent}%</b></p>
+    </div>
+    ${html}
+  `;
+
+  box.scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+}
+
+render();
+
+document.addEventListener("contextmenu",e=>e.preventDefault());
+document.addEventListener("dragstart",e=>e.preventDefault());
+
+document.addEventListener("keydown",function(e){
+  const k=e.key.toUpperCase();
+
+  if(
+    e.key==="F12" ||
+    (e.ctrlKey && e.shiftKey && ["I","J","C"].includes(k)) ||
+    (e.ctrlKey && ["U","S","P","A","C"].includes(k))
+  ){
+    e.preventDefault();
+  }
+});
+</script>
+
+</body>
+</html>
