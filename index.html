@@ -1,1 +1,1437 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skillful Reading & Writing 4 — Must-Know Academic Skills</title>
 
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#fff7fb;
+  color:#1f2937;
+  line-height:1.65;
+  user-select:none;
+  overflow-x:hidden;
+}
+
+.bg{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  overflow:hidden;
+}
+.bg span{
+  position:absolute;
+  font-size:34px;
+  opacity:.07;
+  animation:float 13s infinite ease-in-out;
+}
+.bg span:nth-child(1){left:7%;top:18%;animation-delay:0s}
+.bg span:nth-child(2){left:80%;top:18%;animation-delay:2s}
+.bg span:nth-child(3){left:15%;top:72%;animation-delay:4s}
+.bg span:nth-child(4){left:85%;top:75%;animation-delay:1s}
+.bg span:nth-child(5){left:48%;top:45%;animation-delay:3s}
+.bg span:nth-child(6){left:63%;top:84%;animation-delay:5s}
+
+@keyframes float{
+  0%,100%{transform:translateY(0) rotate(0deg)}
+  50%{transform:translateY(-24px) rotate(8deg)}
+}
+
+.hero{
+  position:relative;
+  z-index:1;
+  background:linear-gradient(135deg,#831843,#be185d,#db2777);
+  color:white;
+  text-align:center;
+  padding:52px 18px 40px;
+}
+.book{
+  display:inline-block;
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.3);
+  padding:8px 14px;
+  border-radius:999px;
+  font-weight:800;
+  margin-bottom:14px;
+}
+h1{
+  margin:0;
+  font-size:40px;
+  line-height:1.15;
+}
+.subtitle{
+  max-width:900px;
+  margin:14px auto 0;
+  font-size:18px;
+  opacity:.96;
+}
+.notice{
+  max-width:850px;
+  margin:22px auto 0;
+  background:#fef3c7;
+  color:#78350f;
+  border:2px solid #facc15;
+  border-radius:20px;
+  padding:16px 18px;
+  font-weight:700;
+}
+.notice small{
+  display:block;
+  font-weight:500;
+  margin-top:5px;
+}
+.source{
+  max-width:850px;
+  margin:12px auto 0;
+  background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.28);
+  color:#fff1f2;
+  border-radius:18px;
+  padding:13px 16px;
+  font-size:14px;
+}
+.source b{color:#ffe4e6}
+
+.nav{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(10px);
+  display:flex;
+  justify-content:flex-start;
+  gap:8px;
+  flex-wrap:nowrap;
+  overflow-x:auto;
+  padding:10px 12px;
+  border-bottom:1px solid #fbcfe8;
+  box-shadow:0 8px 20px rgba(15,23,42,.08);
+  -ms-overflow-style:none;
+  scrollbar-width:none;
+}
+.nav::-webkit-scrollbar{display:none}
+.nav a{
+  text-decoration:none;
+  background:#fdf2f8;
+  color:#9d174d;
+  border:1px solid #f9a8d4;
+  border-radius:999px;
+  padding:7px 12px;
+  font-weight:700;
+  font-size:13px;
+  white-space:nowrap;
+  flex:0 0 auto;
+  line-height:1.2;
+}
+.nav a:hover{
+  background:#be185d;
+  color:white;
+}
+
+.wrap{
+  position:relative;
+  z-index:1;
+  max-width:1150px;
+  margin:32px auto 70px;
+  padding:0 16px;
+}
+.card{
+  background:white;
+  border:1px solid #fbcfe8;
+  border-radius:28px;
+  padding:26px;
+  margin-bottom:32px;
+  box-shadow:0 18px 44px rgba(15,23,42,.11);
+  scroll-margin-top:95px;
+}
+.head{
+  border-bottom:1px solid #fce7f3;
+  padding-bottom:16px;
+  margin-bottom:20px;
+}
+h2{
+  margin:0;
+  color:#9d174d;
+  font-size:28px;
+}
+.desc{
+  margin-top:10px;
+  background:#fdf2f8;
+  border-left:6px solid #db2777;
+  border-radius:14px;
+  padding:12px 14px;
+  color:#374151;
+}
+
+.langbox{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin:20px 0;
+}
+.lang{
+  background:#f8fafc;
+  border:1px solid #e5e7eb;
+  border-radius:20px;
+  padding:18px;
+}
+.lang h3{
+  margin:0 0 10px;
+  color:#9d174d;
+}
+.lang ul{
+  margin:10px 0 0;
+  padding-left:20px;
+}
+
+.keybox{
+  background:#fdf2f8;
+  border:1px solid #f9a8d4;
+  border-left:6px solid #db2777;
+  border-radius:20px;
+  padding:18px;
+  margin:18px 0;
+}
+.keybox h3{
+  margin:0 0 10px;
+  color:#be185d;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+.pill{
+  background:white;
+  border:1px solid #fbcfe8;
+  border-radius:14px;
+  padding:10px 12px;
+  font-size:14px;
+}
+
+.q{
+  border:1px solid #e5e7eb;
+  border-radius:20px;
+  padding:18px;
+  margin:16px 0;
+  background:#fff;
+}
+.q:hover{
+  border-color:#f9a8d4;
+  box-shadow:0 10px 24px rgba(219,39,119,.12);
+}
+.qtag{
+  display:inline-block;
+  font-size:12px;
+  font-weight:800;
+  color:#9d174d;
+  background:#fce7f3;
+  border-radius:999px;
+  padding:4px 10px;
+  margin-bottom:8px;
+}
+.qtitle{
+  font-weight:800;
+  margin-bottom:11px;
+  color:#111827;
+}
+.opt{
+  display:block;
+  margin:8px 0;
+  padding:11px 13px;
+  border-radius:13px;
+  background:#fafafa;
+  border:1px solid #f1f5f9;
+  cursor:pointer;
+}
+.opt:hover{
+  background:#fdf2f8;
+  border-color:#f9a8d4;
+}
+.opt input{margin-right:8px}
+
+.btn{
+  border:0;
+  border-radius:17px;
+  background:linear-gradient(135deg,#be185d,#db2777);
+  color:white;
+  font-size:16px;
+  font-weight:800;
+  padding:14px 24px;
+  cursor:pointer;
+  box-shadow:0 10px 24px rgba(190,24,93,.25);
+}
+.btn:hover{transform:translateY(-1px)}
+
+.result{margin-top:22px}
+.summary{
+  background:#fdf2f8;
+  border:1px solid #f9a8d4;
+  border-left:6px solid #db2777;
+  border-radius:18px;
+  padding:18px;
+  margin-bottom:16px;
+}
+.summary h3{
+  margin:0;
+  color:#be185d;
+  font-size:24px;
+}
+.ans{
+  border-radius:16px;
+  padding:15px;
+  margin:12px 0;
+  border:1px solid #e5e7eb;
+}
+.ok{background:#ecfdf5;border-color:#86efac}
+.bad{background:#fff1f2;border-color:#fecdd3}
+.oktxt{color:#15803d;font-weight:800}
+.badtxt{color:#be123c;font-weight:800}
+.ex{margin-top:8px;font-size:15px}
+.footer{
+  text-align:center;
+  color:#64748b;
+  margin:34px 0 0;
+  font-size:14px;
+}
+
+@media(max-width:800px){
+  h1{font-size:31px}
+  .card{padding:19px;border-radius:22px}
+  h2{font-size:23px}
+  .subtitle{font-size:16px}
+  .langbox{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr}
+
+  .nav{
+    padding:8px 10px;
+    gap:6px;
+  }
+
+  .nav a{
+    font-size:12px;
+    padding:6px 10px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg">
+  <span>📚</span>
+  <span>✍️</span>
+  <span>🎓</span>
+  <span>🧠</span>
+  <span>📖</span>
+  <span>✨</span>
+</div>
+
+<section class="hero">
+  <div class="book">Macmillan Academic Skills</div>
+
+  <h1>Skillful Reading & Writing 4<br>Must-Know Academic Skills</h1>
+
+  <div class="subtitle">
+    Қазақша және орысша қысқаша түсіндіру + academic reading, writing, vocabulary және critical thinking бойынша ең маңызды тесттер.
+  </div>
+
+  <div class="notice">
+    © @elnazm_ln<br>
+    Бұл авторлық жұмыс. Көшіруге, қайта сатуға және таратуға тыйым салынады.
+    <small>Это авторская работа. Копировать, перепродавать и распространять запрещено.</small>
+  </div>
+
+  <div class="source">
+    <b>Source:</b> Skillful Reading & Writing Student’s Book 4 — Mike Boyle & Lindsay Warwick, Macmillan Academic Skills
+  </div>
+</section>
+
+<nav class="nav" id="nav"></nav>
+
+<main class="wrap" id="app"></main>
+
+<script>
+const DATA = [
+{
+id:"unit1",
+title:"Unit 1 — Gathering",
+theme:"Online friends, social networking, argument, formality",
+desc:"Must-know skills: identifying the writer’s position, understanding an argument, synonyms, simple/progressive verb forms, and formal email style.",
+kazakh:`
+<h3>Қазақша қысқаша түсіндіру</h3>
+
+<p><b>Unit 1 — Gathering</b> әлеуметтік желі, online friends және жастардың эмоционалдық дамуы тақырыптарына негізделген. Негізгі мақсат — мәтіндегі автор позициясын анықтау және аргументтің қалай құрылғанын түсіну.</p>
+
+<ul>
+<li><b>Reading skill:</b> автордың позициясын табу үшін opinion language, positive/negative adjectives, linking phrases және evidence іздеу керек.</li>
+<li><b>Critical thinking:</b> аргумент = statement + reason/evidence. Егер reason немесе evidence жоқ болса, бұл толық аргумент емес.</li>
+<li><b>Language development:</b> synonyms мәтінде қайталануды азайтады, бірақ мағынасы мен formal level бірдей болмауы мүмкін.</li>
+<li><b>Grammar:</b> simple forms фактіні, әдетті немесе аяқталған әрекетті береді; progressive forms ongoing немесе duration мағынасын көрсетеді.</li>
+<li><b>Writing skill:</b> formal email жазғанда tone polite, passive voice, noun phrases, no slang, no contractions қолданған дұрыс.</li>
+</ul>
+`,
+russian:`
+<h3>Краткое русское объяснение</h3>
+
+<p><b>Unit 1 — Gathering</b> связан с темой социальных сетей, онлайн-друзей и влияния технологий на молодых людей. Главный навык — понять позицию автора и отличить мнение от аргумента.</p>
+
+<ul>
+<li><b>Reading skill:</b> чтобы определить позицию автора, ищи оценочные слова, opinion language, linking phrases и evidence.</li>
+<li><b>Critical thinking:</b> argument = утверждение + причина/доказательство. Без причины или evidence это просто мнение.</li>
+<li><b>Language development:</b> synonyms помогают избегать повторов, но могут отличаться по точности, оттенку и уровню формальности.</li>
+<li><b>Grammar:</b> simple forms показывают факт, привычку или завершённость; progressive forms подчёркивают процесс, длительность или незавершённость.</li>
+<li><b>Writing skill:</b> formal email требует polite tone, более формального словаря, noun phrases, без slang и без contractions.</li>
+</ul>
+`,
+mustknow:[
+"Writer’s position: look for opinion words and evidence",
+"Argument = statement + reason/evidence",
+"Opinion without evidence is weak",
+"Synonyms reduce repetition but may differ in meaning",
+"Simple verb forms: facts, habits, completed actions",
+"Progressive forms: duration, ongoing action",
+"State verbs are usually not progressive",
+"Formal writing avoids slang and contractions",
+"Formal emails use polite phrases",
+"Noun phrases sound more academic"
+],
+questions:[
+{
+q:"What is the best definition of an argument in academic reading?",
+a:"a statement supported by reasons or evidence",
+options:["a statement supported by reasons or evidence","any personal opinion","a long paragraph","a list of facts only"],
+e:"Қазақша: аргументте пікір ғана емес, reason немесе evidence болуы керек. Русский: an argument needs support through reasons or evidence."
+},
+{
+q:"Which clue helps identify a writer’s position?",
+a:"positive or negative evaluative language",
+options:["page number","positive or negative evaluative language","font size","the title only"],
+e:"Қазақша: автор позициясы бағалау сөздері арқылы көрінеді. Русский: evaluative language often reveals the writer’s attitude."
+},
+{
+q:"Which sentence is an argument?",
+a:"Online friendships can be useful because they help shy people communicate.",
+options:["Online friendships exist.","Many people use social media.","Online friendships can be useful because they help shy people communicate.","Teenagers are online."],
+e:"Қазақша: because арқылы reason берілген, сондықтан бұл аргумент. Русский: the sentence contains a claim and a reason."
+},
+{
+q:"Why do writers use synonyms?",
+a:"to avoid unnecessary repetition",
+options:["to make every sentence longer","to avoid unnecessary repetition","to remove meaning","to make the text informal"],
+e:"Қазақша: synonyms қайталануды азайтады. Русский: synonyms help avoid repeating the same word."
+},
+{
+q:"Which verb form emphasizes an ongoing action?",
+a:"progressive form",
+options:["simple form","progressive form","imperative","passive only"],
+e:"Қазақша: progressive ongoing action көрсетеді. Русский: progressive forms show an action in progress."
+},
+{
+q:"Which sentence is more formal?",
+a:"I would be grateful if you could send the information.",
+options:["Send me the info asap.","I would be grateful if you could send the information.","Can you send it quick?","I need this now."],
+e:"Қазақша: polite phrase және formal vocabulary бар. Русский: the sentence uses polite formal language."
+},
+{
+q:"Which feature is usually avoided in formal academic email?",
+a:"slang and contractions",
+options:["polite tone","clear purpose","slang and contractions","complete sentences"],
+e:"Қазақша: formal style slang және contractions қолданбайды. Русский: formal writing avoids slang and contractions."
+},
+{
+q:"Which phrase is useful for a formal request?",
+a:"Would it be possible to...?",
+options:["Gimme...","Would it be possible to...?","Do it now","Wanna help?"],
+e:"Қазақша: formal request үшін polite structure керек. Русский: this is a polite formal request."
+},
+{
+q:"Which is a state verb that is usually not used in progressive form?",
+a:"believe",
+options:["run","write","believe","chat"],
+e:"Қазақша: believe — state verb. Русский: believe describes a state, not an action process."
+},
+{
+q:"What should you check before rewriting an informal email formally?",
+a:"reader, purpose, tone and language",
+options:["only the number of words","reader, purpose, tone and language","only the greeting","only punctuation"],
+e:"Қазақша: formal email үшін audience, purpose, tone маңызды. Русский: formality depends on reader, purpose, tone and language."
+}
+]
+},
+{
+id:"unit2",
+title:"Unit 2 — Games",
+theme:"Olympics, hosting events, contrast, references, outlining",
+desc:"Must-know skills: identifying contrasts, understanding references outside the text, guessing meaning from context, expressing contrast, and creating an outline.",
+kazakh:`
+<h3>Қазақша қысқаша түсіндіру</h3>
+
+<p><b>Unit 2 — Games</b> Олимпиада және ірі спорттық іс-шараларды өткізу тақырыбына негізделген. Негізгі ой — мәтіндегі contrast, reference және context clues арқылы мағынаны түсіну.</p>
+
+<ul>
+<li><b>Reading skill:</b> contrast табу үшін however, although, whereas, while, despite, on the other hand сияқты signal words іздеу керек.</li>
+<li><b>Reference skill:</b> this, that, these, those, it, they сияқты сөздер кейде алдыңғы сөйлемге ғана емес, мәтіннен тыс идеяға да сілтейді.</li>
+<li><b>Vocabulary:</b> unknown word мағынасын context арқылы болжауға болады: definition, example, contrast, cause/effect clues.</li>
+<li><b>Language development:</b> contrast білдіретін structures: although + clause, despite + noun/-ing, however, whereas, in contrast.</li>
+<li><b>Writing skill:</b> outline — жазбаның жоспары. Ол introduction, main points, supporting details, conclusion құрылымын көрсетеді.</li>
+</ul>
+`,
+russian:`
+<h3>Краткое русское объяснение</h3>
+
+<p><b>Unit 2 — Games</b> связан с Олимпиадой, крупными спортивными событиями и последствиями их проведения. Главные навыки — видеть contrast, понимать references и угадывать значение слов по context.</p>
+
+<ul>
+<li><b>Reading skill:</b> contrast обычно показывают however, although, whereas, while, despite, on the other hand.</li>
+<li><b>Reference skill:</b> this, that, it, they могут ссылаться на предыдущую идею, целую ситуацию или информацию вне текста.</li>
+<li><b>Vocabulary:</b> значение незнакомого слова можно определить по context clues: definition, examples, contrast, cause/effect.</li>
+<li><b>Language development:</b> contrast выражается через although, despite, however, whereas, in contrast.</li>
+<li><b>Writing skill:</b> outline помогает организовать текст до написания: introduction, main points, supporting details, conclusion.</li>
+</ul>
+`,
+mustknow:[
+"Contrast markers: however, although, whereas, despite",
+"Although + full clause",
+"Despite + noun or -ing",
+"However usually connects two contrasting ideas",
+"References can point to previous ideas",
+"Context clues help guess unknown words",
+"Examples and definitions help meaning",
+"Outlines organize writing before drafting",
+"Each main point needs support",
+"Good outline prevents weak structure"
+],
+questions:[
+{
+q:"Which word usually signals contrast?",
+a:"however",
+options:["therefore","however","because","for example"],
+e:"Қазақша: however қарама-қайшылық білдіреді. Русский: however signals contrast."
+},
+{
+q:"Choose the correct structure:",
+a:"Although the event was expensive, it attracted many tourists.",
+options:["Although the event was expensive, it attracted many tourists.","Despite the event was expensive, it attracted many tourists.","However the event was expensive, it attracted many tourists.","Whereas expensive, it attracted tourists."],
+e:"Қазақша: although кейін full clause келеді. Русский: although is followed by a full clause."
+},
+{
+q:"Choose the correct structure:",
+a:"Despite the high cost, the city hosted the event.",
+options:["Despite the high cost, the city hosted the event.","Despite the event was costly, the city hosted it.","Although the high cost, the city hosted it.","Whereas the high cost, the city hosted it."],
+e:"Қазақша: despite кейін noun phrase келеді. Русский: despite is followed by a noun phrase or -ing."
+},
+{
+q:"What does an outline help you do?",
+a:"organize ideas before writing",
+options:["copy a text","organize ideas before writing","avoid planning","make grammar unnecessary"],
+e:"Қазақша: outline жазу алдында ойды реттейді. Русский: an outline organizes ideas before drafting."
+},
+{
+q:"Which pronoun often refers back to a previous idea?",
+a:"this",
+options:["beautiful","this","although","expensive"],
+e:"Қазақша: this алдыңғы идеяға сілтей алады. Русский: this can refer to a previous idea."
+},
+{
+q:"How can you guess the meaning of an unknown word?",
+a:"use context clues",
+options:["ignore the sentence","use context clues","always translate every word","choose randomly"],
+e:"Қазақша: context clues сөз мағынасын болжауға көмектеседі. Русский: context clues help infer meaning."
+},
+{
+q:"Which is a cause/effect clue?",
+a:"as a result",
+options:["although","whereas","as a result","in contrast"],
+e:"Қазақша: as a result нәтиже білдіреді. Русский: as a result shows effect."
+},
+{
+q:"Which phrase shows contrast?",
+a:"on the other hand",
+options:["in addition","on the other hand","for instance","because of this"],
+e:"Қазақша: on the other hand басқа қарсы ойды береді. Русский: it introduces a contrasting point."
+},
+{
+q:"What should a main point in an outline include?",
+a:"supporting details",
+options:["random words","supporting details","only punctuation","unrelated examples"],
+e:"Қазақша: main point supporting details арқылы күшейеді. Русский: main points need supporting details."
+},
+{
+q:"Which sentence best expresses contrast?",
+a:"The event was costly; however, it improved tourism.",
+options:["The event was costly because it improved tourism.","The event was costly; however, it improved tourism.","The event improved tourism for example costly.","The event was costly and costly."],
+e:"Қазақша: however екі қарама-қарсы идеяны байланыстырады. Русский: however connects contrasting ideas."
+}
+]
+},
+  {
+id:"unit3",
+title:"Unit 3 — Nostalgia",
+theme:"Memory, nostalgia, sources, analogies, transition sentences",
+desc:"Must-know skills: understanding analogies, identifying sources of information, reporting information, condensing ideas with compound adjectives, and using transition sentences.",
+kazakh:`
+<h3>Қазақша қысқаша түсіндіру</h3>
+
+<p><b>Unit 3 — Nostalgia</b> есте сақтау, өткенді еске алу және memory accuracy тақырыптарына негізделген. Негізгі мақсат — мәтіндегі analogies, sources of information және transition sentences түсіну.</p>
+
+<ul>
+<li><b>Reading skill:</b> analogy — күрделі идеяны түсіндіру үшін екі нәрсені салыстыру. Мысалы, memory компьютер сияқты сақталады деу — analogy.</li>
+<li><b>Reading skill:</b> sources of information — ақпарат қайдан алынғанын анықтау: research, expert, study, survey, personal experience.</li>
+<li><b>Critical thinking:</b> memory әрқашан дәл болмауы мүмкін; сондықтан evidence пен source-ты тексеру керек.</li>
+<li><b>Language development:</b> reporting information — автордың/зерттеудің ойын жеткізу: <i>According to the study...</i>, <i>The researcher claims that...</i></li>
+<li><b>Language development:</b> compound adjectives ойды қысқа жеткізеді: <i>long-term memory</i>, <i>well-known theory</i>, <i>evidence-based argument</i>.</li>
+<li><b>Writing skill:</b> transition sentences бір paragraph-тан келесі paragraph-қа логикалық өтуге көмектеседі.</li>
+</ul>
+`,
+russian:`
+<h3>Краткое русское объяснение</h3>
+
+<p><b>Unit 3 — Nostalgia</b> связан с памятью, воспоминаниями и точностью прошлого опыта. Главные навыки — понимать analogies, определять sources of information и использовать transition sentences.</p>
+
+<ul>
+<li><b>Reading skill:</b> analogy — сравнение двух вещей, чтобы объяснить сложную идею.</li>
+<li><b>Reading skill:</b> sources of information — нужно понимать, откуда взята информация: research, expert, study, survey, personal experience.</li>
+<li><b>Critical thinking:</b> память может быть неточной, поэтому важно проверять evidence и source.</li>
+<li><b>Language development:</b> reporting information помогает передать чужую идею: <i>According to the article...</i>, <i>The study suggests that...</i></li>
+<li><b>Language development:</b> compound adjectives делают академический стиль короче и точнее: <i>long-term memory</i>, <i>research-based claim</i>.</li>
+<li><b>Writing skill:</b> transition sentences соединяют paragraph-ы и помогают читателю следить за логикой.</li>
+</ul>
+`,
+mustknow:[
+"Analogy explains a difficult idea through comparison",
+"Source of information = where the information comes from",
+"Reliable sources include studies, experts and research",
+"Memory can be inaccurate or reconstructed",
+"According to... reports information",
+"The study suggests that... reports research carefully",
+"Compound adjectives make ideas concise",
+"Long-term, well-known, research-based",
+"Transition sentences connect paragraphs",
+"Good essays need logical flow"
+],
+questions:[
+{
+q:"What is an analogy in academic reading?",
+a:"a comparison used to explain an idea",
+options:["a comparison used to explain an idea","a spelling mistake","a direct quotation only","a paragraph title"],
+e:"Қазақша: analogy күрделі ойды салыстыру арқылы түсіндіреді. Русский: an analogy explains an idea through comparison."
+},
+{
+q:"Which is an example of a source of information?",
+a:"a university research study",
+options:["a university research study","a random guess","a font style","a page colour"],
+e:"Қазақша: research study — ақпарат көзі. Русский: a research study is a source of information."
+},
+{
+q:"Why should we check sources when reading about memory?",
+a:"because memory claims need evidence",
+options:["because memory claims need evidence","because sources are never useful","because all memories are always perfect","because titles are enough"],
+e:"Қазақша: memory туралы claim evidence қажет етеді. Русский: claims about memory should be supported by evidence."
+},
+{
+q:"Which phrase reports information academically?",
+a:"According to the study, memory can change over time.",
+options:["According to the study, memory can change over time.","Memory is weird lol.","I guess memory changes.","Everybody knows memory is fake."],
+e:"Қазақша: According to the study — academic reporting phrase. Русский: this phrase reports information from a source."
+},
+{
+q:"Which phrase is a compound adjective?",
+a:"long-term memory",
+options:["long-term memory","memory very long","term memory long","long memory term"],
+e:"Қазақша: long-term hyphen арқылы compound adjective болады. Русский: long-term is a compound adjective."
+},
+{
+q:"What is the function of a transition sentence?",
+a:"to connect one paragraph to the next",
+options:["to connect one paragraph to the next","to replace evidence","to make the essay shorter only","to remove the conclusion"],
+e:"Қазақша: transition sentence paragraph арасын байланыстырады. Русский: it creates logical flow between paragraphs."
+},
+{
+q:"Which sentence is a good transition?",
+a:"Having considered personal memory, we now turn to scientific evidence.",
+options:["Having considered personal memory, we now turn to scientific evidence.","Memory memory memory.","This paragraph is random.","The end."],
+e:"Қазақша: бұл сөйлем келесі ойға логикалық өтеді. Русский: it clearly moves from one idea to the next."
+},
+{
+q:"Which source is usually stronger for an academic essay?",
+a:"a peer-reviewed study",
+options:["a peer-reviewed study","a stranger’s comment","a personal rumor","an advertisement only"],
+e:"Қазақша: peer-reviewed study сенімдірек. Русский: peer-reviewed research is usually stronger evidence."
+},
+{
+q:"What does 'The researcher claims that...' do?",
+a:"reports another person’s idea",
+options:["reports another person’s idea","gives a command","shows a contrast only","asks a direct question"],
+e:"Қазақша: бұл phrase басқа адамның ойын жеткізеді. Русский: it reports what a researcher says."
+},
+{
+q:"Which is the best academic description?",
+a:"evidence-based conclusion",
+options:["evidence-based conclusion","conclusion based evidence","evidence conclusion based","based conclusion evidence"],
+e:"Қазақша: evidence-based — compound adjective. Русский: evidence-based is the correct compound adjective."
+}
+]
+},
+{
+id:"unit4",
+title:"Unit 4 — Risk",
+theme:"Risk-takers, research, summarizing, plagiarism, infinitive phrases",
+desc:"Must-know skills: summarizing, assessing whether research supports an argument, adjective + preposition collocations, infinitive phrases, and avoiding plagiarism.",
+kazakh:`
+<h3>Қазақша қысқаша түсіндіру</h3>
+
+<p><b>Unit 4 — Risk</b> risk-takers, research evidence және academic honesty тақырыптарына негізделген. Негізгі мақсат — мәтінді қысқаша summarizing жасау және research argument-ті шынымен қолдай ма, соны бағалау.</p>
+
+<ul>
+<li><b>Reading skill:</b> summarizing — негізгі ойды қысқа жеткізу. Summary-де ұсақ details, examples және personal opinion болмауы керек.</li>
+<li><b>Critical thinking:</b> research argument-ті support ету үшін evidence нақты, relevant және жеткілікті болуы керек.</li>
+<li><b>Language development:</b> adjective + preposition collocations: <i>interested in</i>, <i>aware of</i>, <i>responsible for</i>, <i>similar to</i>, <i>different from</i>.</li>
+<li><b>Language development:</b> infinitive phrases purpose немесе intention білдіреді: <i>to reduce risk</i>, <i>to understand behavior</i>.</li>
+<li><b>Writing skill:</b> plagiarism болдырмау үшін source көрсету, paraphrase жасау және quotation-ды дұрыс қолдану керек.</li>
+<li><b>Writing task:</b> research paper summary жазғанда author, topic, main finding және evidence қысқа беріледі.</li>
+</ul>
+`,
+russian:`
+<h3>Краткое русское объяснение</h3>
+
+<p><b>Unit 4 — Risk</b> связан с людьми, которые идут на риск, исследованиями и академической честностью. Главные навыки — summarizing, оценка evidence и avoiding plagiarism.</p>
+
+<ul>
+<li><b>Reading skill:</b> summarizing — кратко передать главную мысль. В summary не нужны мелкие детали, примеры и личное мнение.</li>
+<li><b>Critical thinking:</b> research поддерживает argument только если evidence точное, relevant и достаточное.</li>
+<li><b>Language development:</b> adjective + preposition collocations: <i>interested in</i>, <i>aware of</i>, <i>responsible for</i>, <i>similar to</i>, <i>different from</i>.</li>
+<li><b>Language development:</b> infinitive phrases выражают цель или намерение: <i>to reduce risk</i>, <i>to explain behaviour</i>.</li>
+<li><b>Writing skill:</b> plagiarism можно избежать через citation, paraphrasing и правильное использование quotations.</li>
+<li><b>Writing task:</b> summary of a research paper кратко показывает author, topic, main finding and evidence.</li>
+</ul>
+`,
+mustknow:[
+"Summary = main idea in fewer words",
+"Do not include personal opinion in summary",
+"Do not copy sentences without citation",
+"Evidence must be relevant to the argument",
+"Research support should be clear and sufficient",
+"interested in / aware of / responsible for",
+"similar to / different from",
+"Infinitive phrases show purpose",
+"To avoid plagiarism: cite, paraphrase, quote correctly",
+"Research summary includes topic, finding and evidence"
+],
+questions:[
+{
+q:"What should a good summary include?",
+a:"the main idea only, in shorter form",
+options:["the main idea only, in shorter form","every small example","personal opinion","copied paragraphs"],
+e:"Қазақша: summary негізгі ойды қысқа береді. Русский: a summary gives the main idea in fewer words."
+},
+{
+q:"What should you avoid in an academic summary?",
+a:"personal opinion",
+options:["personal opinion","main idea","neutral language","short form"],
+e:"Қазақша: summary-де personal opinion болмайды. Русский: a summary should be neutral."
+},
+{
+q:"When does research support an argument?",
+a:"when the evidence is relevant and sufficient",
+options:["when the evidence is relevant and sufficient","when it is very long","when it has no source","when it is copied"],
+e:"Қазақша: evidence argument-ке relevant және жеткілікті болуы керек. Русский: evidence must be relevant and sufficient."
+},
+{
+q:"Choose the correct collocation: interested ______ risk-taking behavior.",
+a:"in",
+options:["in","on","at","for"],
+e:"Қазақша: interested in — тұрақты тіркес. Русский: correct collocation is interested in."
+},
+{
+q:"Choose the correct collocation: aware ______ the possible danger.",
+a:"of",
+options:["of","in","to","for"],
+e:"Қазақша: aware of — хабардар болу. Русский: correct collocation is aware of."
+},
+{
+q:"Choose the correct collocation: responsible ______ the final decision.",
+a:"for",
+options:["for","to","of","in"],
+e:"Қазақша: responsible for — жауапты. Русский: correct collocation is responsible for."
+},
+{
+q:"Which phrase shows purpose?",
+a:"to reduce risk",
+options:["to reduce risk","although risky","because risk","risk and risk"],
+e:"Қазақша: to + verb purpose білдіреді. Русский: infinitive phrase can show purpose."
+},
+{
+q:"What is plagiarism?",
+a:"using someone’s words or ideas without proper credit",
+options:["using someone’s words or ideas without proper credit","writing your own idea","citing a source","paraphrasing with reference"],
+e:"Қазақша: source көрсетпей алу plagiarism. Русский: plagiarism is using others’ work without credit."
+},
+{
+q:"How can you avoid plagiarism?",
+a:"paraphrase and cite the source",
+options:["paraphrase and cite the source","copy without quotation marks","remove the author’s name","change only one word"],
+e:"Қазақша: paraphrase + citation керек. Русский: paraphrase and cite the original source."
+},
+{
+q:"Which is the best research summary sentence?",
+a:"The study suggests that risk-taking may be linked to personality and context.",
+options:["The study suggests that risk-taking may be linked to personality and context.","Risk is cool.","I like risk-takers.","The article has many words."],
+e:"Қазақша: бұл neutral academic summary. Русский: this sentence summarizes the finding academically."
+}
+]
+},
+  {
+id:"unit5",
+title:"Unit 5 — Sprawl",
+theme:"Informal settlements, urban growth, perspectives, trends, hedging",
+desc:"Must-know skills: identifying different perspectives, recognizing trends and patterns, prepositional phrases, impersonal report structures, and hedging in argumentative writing.",
+kazakh:`
+<h3>Қазақша қысқаша түсіндіру</h3>
+
+<p><b>Unit 5 — Sprawl</b> қала өсуі, informal settlements және urban problems тақырыптарына негізделген. Негізгі мақсат — әртүрлі perspectives анықтау және trends/patterns тану.</p>
+
+<ul>
+<li><b>Reading skill:</b> different perspectives — бір мәселе туралы әртүрлі адамдардың/топтардың көзқарасын анықтау.</li>
+<li><b>Reading skill:</b> trends and patterns — өзгерістің бағытын көру: increase, decrease, rapid growth, gradual decline, repeated pattern.</li>
+<li><b>Critical thinking:</b> urban problem-ды бір ғана жақтан емес, residents, government, planners, researchers perspective арқылы қарау керек.</li>
+<li><b>Language development:</b> prepositional phrases academic style-ды нақты етеді: <i>in response to</i>, <i>as a result of</i>, <i>in relation to</i>, <i>in terms of</i>.</li>
+<li><b>Language development:</b> impersonal report structures: <i>It is believed that...</i>, <i>It has been suggested that...</i></li>
+<li><b>Writing skill:</b> hedging — academic writing-та қатты claim жасамай, абайлап айту: <i>may, might, appears to, seems to, is likely to</i>.</li>
+</ul>
+`,
+russian:`
+<h3>Краткое русское объяснение</h3>
+
+<p><b>Unit 5 — Sprawl</b> связан с ростом городов, неформальными поселениями и городскими проблемами. Главные навыки — определять разные perspectives и видеть trends/patterns.</p>
+
+<ul>
+<li><b>Reading skill:</b> different perspectives — умение понять, как разные люди или группы смотрят на одну проблему.</li>
+<li><b>Reading skill:</b> trends and patterns — распознавание направления изменений: increase, decrease, rapid growth, gradual decline.</li>
+<li><b>Critical thinking:</b> городскую проблему нужно рассматривать с разных сторон: residents, government, planners, researchers.</li>
+<li><b>Language development:</b> prepositional phrases делают academic writing точнее: <i>in response to</i>, <i>as a result of</i>, <i>in terms of</i>.</li>
+<li><b>Language development:</b> impersonal report structures: <i>It is believed that...</i>, <i>It has been suggested that...</i></li>
+<li><b>Writing skill:</b> hedging помогает писать осторожно и академично: <i>may, might, appears to, seems to, is likely to</i>.</li>
+</ul>
+`,
+mustknow:[
+"Perspective = viewpoint of a person or group",
+"Compare government, residents and researchers",
+"Trends show direction of change",
+"Patterns show repeated features",
+"in response to / as a result of",
+"in terms of / in relation to",
+"It is believed that... = impersonal report",
+"It has been suggested that...",
+"Hedging avoids overclaiming",
+"may, might, seems to, appears to"
+],
+questions:[
+{
+q:"What does identifying different perspectives mean?",
+a:"recognizing different viewpoints on the same issue",
+options:["recognizing different viewpoints on the same issue","copying one opinion","ignoring evidence","choosing only the longest paragraph"],
+e:"Қазақша: perspectives — бір мәселе туралы әртүрлі көзқарастар. Русский: perspectives are different viewpoints."
+},
+{
+q:"Which phrase shows a trend?",
+a:"a gradual increase in population",
+options:["a gradual increase in population","a person in a city","a short sentence","a single example"],
+e:"Қазақша: gradual increase өзгеріс бағытын көрсетеді. Русский: it shows a trend."
+},
+{
+q:"Which group might have a different perspective on informal settlements?",
+a:"local residents",
+options:["local residents","punctuation marks","page numbers","font styles"],
+e:"Қазақша: residents мәселені өз тәжірибесі арқылы көреді. Русский: residents may have their own perspective."
+},
+{
+q:"Choose the correct phrase: ______ response to rapid urban growth, new housing policies were introduced.",
+a:"In",
+options:["In","On","At","For"],
+e:"Қазақша: in response to — жауап ретінде. Русский: correct phrase is in response to."
+},
+{
+q:"Choose the correct phrase: The problem increased ______ a result of poor planning.",
+a:"as",
+options:["as","in","on","with"],
+e:"Қазақша: as a result of — нәтижесінде. Русский: correct phrase is as a result of."
+},
+{
+q:"Which is an impersonal report structure?",
+a:"It is believed that urban growth will continue.",
+options:["It is believed that urban growth will continue.","I totally know cities are bad.","You must think this.","We hate planning."],
+e:"Қазақша: It is believed that — impersonal academic structure. Русский: this structure sounds academic and impersonal."
+},
+{
+q:"Which word is used for hedging?",
+a:"may",
+options:["may","definitely","always","never"],
+e:"Қазақша: may claim-ды жұмсартады. Русский: may makes a claim more cautious."
+},
+{
+q:"Which sentence uses hedging correctly?",
+a:"Urban sprawl may increase pressure on transport systems.",
+options:["Urban sprawl may increase pressure on transport systems.","Urban sprawl always destroys everything.","Sprawl is 100% the only problem.","Everyone knows sprawl is evil."],
+e:"Қазақша: may academic caution береді. Русский: may makes the claim cautious."
+},
+{
+q:"What does a pattern in reading usually show?",
+a:"a repeated feature or repeated situation",
+options:["a repeated feature or repeated situation","a random title","one isolated word","only the conclusion"],
+e:"Қазақша: pattern — қайталанатын белгі. Русский: a pattern is something repeated."
+},
+{
+q:"What is the main purpose of hedging in academic writing?",
+a:"to avoid making claims that are too strong",
+options:["to avoid making claims that are too strong","to make writing informal","to hide the topic","to remove evidence"],
+e:"Қазақша: hedging тым қатты claim-ды жұмсартады. Русский: hedging prevents overgeneralization."
+}
+]
+},
+{
+id:"unit6",
+title:"Unit 6 — Legacy",
+theme:"Endangered languages, preservation, fact/opinion/speculation, referencing",
+desc:"Must-know skills: using headings to understand main ideas, identifying fact/speculation/opinion, words with more than one affix, relative pronouns with prepositions, writing definitions, and academic referencing.",
+kazakh:`
+<h3>Қазақша қысқаша түсіндіру</h3>
+
+<p><b>Unit 6 — Legacy</b> endangered languages, preservation және cultural heritage тақырыптарына негізделген. Негізгі мақсат — headings арқылы main ideas түсіну және fact, opinion, speculation ажырату.</p>
+
+<ul>
+<li><b>Reading skill:</b> headings мәтіннің құрылымын көрсетеді. Heading-ті оқып, paragraph main idea-ны алдын ала болжауға болады.</li>
+<li><b>Critical thinking:</b> fact — тексеруге болатын ақпарат; opinion — жеке көзқарас; speculation — нақты дәлелсіз болжам.</li>
+<li><b>Language development:</b> affixes сөз мағынасын өзгертеді: <i>appear → disappearance</i>, <i>possible → impossibility</i>, <i>nation → international</i>.</li>
+<li><b>Grammar:</b> relative pronouns with prepositions formal writing-та жиі кездеседі: <i>the language in which...</i>, <i>the people with whom...</i></li>
+<li><b>Writing skill:</b> definition жазғанда term + category + specific feature құрылымы пайдалы: <i>A dialect is a form of language used by a particular group.</i></li>
+<li><b>Study skill:</b> academic referencing — басқа source қолданғанда авторды көрсету. Бұл plagiarism-ді болдырмайды.</li>
+</ul>
+`,
+russian:`
+<h3>Краткое русское объяснение</h3>
+
+<p><b>Unit 6 — Legacy</b> связан с исчезающими языками, сохранением культурного наследия и академическими источниками. Главные навыки — использовать headings и различать fact, opinion, speculation.</p>
+
+<ul>
+<li><b>Reading skill:</b> headings показывают структуру текста и помогают понять main ideas до детального чтения.</li>
+<li><b>Critical thinking:</b> fact — проверяемая информация; opinion — личная точка зрения; speculation — предположение без полного доказательства.</li>
+<li><b>Language development:</b> affixes меняют значение слова: <i>appear → disappearance</i>, <i>possible → impossibility</i>, <i>nation → international</i>.</li>
+<li><b>Grammar:</b> relative pronouns with prepositions часто используются в formal writing: <i>the language in which...</i>, <i>the people with whom...</i></li>
+<li><b>Writing skill:</b> definition можно строить так: term + category + specific feature.</li>
+<li><b>Study skill:</b> academic referencing показывает источник информации и помогает избежать plagiarism.</li>
+</ul>
+`,
+mustknow:[
+"Headings show the structure of a text",
+"Headings help predict main ideas",
+"Fact = can be checked",
+"Opinion = personal view",
+"Speculation = possible but not proven",
+"Affixes change word meaning",
+"disappear → disappearance",
+"possible → impossibility",
+"the language in which... = formal relative structure",
+"Definition = term + category + specific feature"
+],
+questions:[
+{
+q:"Why are headings useful in academic reading?",
+a:"they help identify the main ideas and structure",
+options:["they help identify the main ideas and structure","they replace the whole text","they are always the conclusion","they remove the need to read"],
+e:"Қазақша: headings мәтін құрылымын көрсетеді. Русский: headings show structure and main ideas."
+},
+{
+q:"Which statement is a fact?",
+a:"Some languages have fewer than 1,000 speakers.",
+options:["Some languages have fewer than 1,000 speakers.","This language is the most beautiful.","It might disappear soon.","Preserving languages is interesting."],
+e:"Қазақша: бұл тексеруге болатын ақпарат. Русский: a fact can be checked."
+},
+{
+q:"Which statement is an opinion?",
+a:"Preserving every language is extremely important.",
+options:["Preserving every language is extremely important.","The language has 500 speakers.","The study was published in 2012.","The village is in the north."],
+e:"Қазақша: important — бағалау, opinion. Русский: this is a value judgment, so it is opinion."
+},
+{
+q:"Which statement is speculation?",
+a:"The language may disappear in the next generation.",
+options:["The language may disappear in the next generation.","The language has an alphabet.","The book was published in 2010.","The author interviewed ten people."],
+e:"Қазақша: may болжамды көрсетеді. Русский: may signals speculation."
+},
+{
+q:"Which word contains more than one affix?",
+a:"internationally",
+options:["internationally","nation","speak","text"],
+e:"Қазақша: international + ly бірнеше affix бар. Русский: internationally has more than one affix."
+},
+{
+q:"Choose the formal relative structure:",
+a:"the community in which the language is spoken",
+options:["the community in which the language is spoken","the community which the language is spoken in it","the community where spoken language it","the community the language spoken"],
+e:"Қазақша: in which formal relative structure. Русский: in which is a formal relative structure."
+},
+{
+q:"What is the best definition structure?",
+a:"term + category + specific feature",
+options:["term + category + specific feature","example + example only","opinion + slang","question + answer only"],
+e:"Қазақша: definition нақты құрылыммен беріледі. Русский: a clear definition uses term, category and feature."
+},
+{
+q:"Which is a good definition?",
+a:"A dialect is a form of language used by a particular group.",
+options:["A dialect is a form of language used by a particular group.","Dialect nice language.","People speak dialect maybe.","Dialect is when language."],
+e:"Қазақша: term + category + feature бар. Русский: it gives category and specific feature."
+},
+{
+q:"Why is academic referencing important?",
+a:"it shows the source and prevents plagiarism",
+options:["it shows the source and prevents plagiarism","it makes writing informal","it hides evidence","it removes the author"],
+e:"Қазақша: referencing source көрсетеді. Русский: referencing gives credit and avoids plagiarism."
+},
+{
+q:"Which phrase introduces a source appropriately?",
+a:"According to the researchers, language loss is increasing.",
+options:["According to the researchers, language loss is increasing.","Everyone says language loss.","I think maybe researchers.","Language loss wow."],
+e:"Қазақша: According to... source-ты көрсетеді. Русский: according to introduces a source."
+}
+]
+},
+  {
+id:"unit7",
+title:"Unit 7 — Expanse",
+theme:"Space, exploration, text structure, implications, time language",
+desc:"Must-know skills: understanding text structure, identifying implications, using time expressions, reduced time clauses, and writing a biography.",
+kazakh:`
+<h3>Қазақша қысқаша түсіндіру</h3>
+
+<p><b>Unit 7 — Expanse</b> space exploration, scientific achievement және biography writing тақырыптарына негізделген. Негізгі мақсат — мәтін құрылымын түсіну және implication анықтау.</p>
+
+<ul>
+<li><b>Reading skill:</b> text structure — мәтіннің қалай ұйымдастырылғанын көру: chronology, cause/effect, problem/solution, comparison.</li>
+<li><b>Critical thinking:</b> implication — автор тура айтпаған, бірақ мәтіннен шығатын жасырын мағына немесе нәтиже.</li>
+<li><b>Language development:</b> time expressions оқиғалардың ретін көрсетеді: <i>initially</i>, <i>eventually</i>, <i>afterwards</i>, <i>during</i>, <i>by the time</i>.</li>
+<li><b>Grammar:</b> reduced time clauses мәтінді қысқа әрі academic етеді: <i>After completing the mission, the team returned</i>.</li>
+<li><b>Writing skill:</b> biography жазғанда адам өміріндегі key events, achievements, dates және impact ретімен беріледі.</li>
+<li><b>Writing task:</b> biography тек өмірбаян емес; ол адамның contribution және legacy маңызын да көрсетуі керек.</li>
+</ul>
+`,
+russian:`
+<h3>Краткое русское объяснение</h3>
+
+<p><b>Unit 7 — Expanse</b> связан с космосом, исследованиями, научными достижениями и biography writing. Главные навыки — понимать text structure и находить implications.</p>
+
+<ul>
+<li><b>Reading skill:</b> text structure показывает, как организован текст: chronology, cause/effect, problem/solution, comparison.</li>
+<li><b>Critical thinking:</b> implication — это вывод или скрытый смысл, который автор не говорит прямо, но он следует из текста.</li>
+<li><b>Language development:</b> time expressions показывают порядок событий: <i>initially</i>, <i>eventually</i>, <i>afterwards</i>, <i>during</i>, <i>by the time</i>.</li>
+<li><b>Grammar:</b> reduced time clauses делают стиль короче: <i>After completing the experiment, the scientist published the results</i>.</li>
+<li><b>Writing skill:</b> biography обычно строится хронологически: early life, key events, achievements, impact.</li>
+<li><b>Writing task:</b> хорошая biography показывает не только факты жизни, но и вклад человека.</li>
+</ul>
+`,
+mustknow:[
+"Text structure: chronology, cause/effect, problem/solution",
+"Chronology shows events in time order",
+"Implication = unstated meaning",
+"Use evidence to infer implications",
+"Time expressions show sequence",
+"initially / eventually / afterwards",
+"Reduced time clause: After completing...",
+"Biography uses chronological order",
+"Biography includes achievements and impact",
+"Legacy means long-term influence"
+],
+questions:[
+{
+q:"What does text structure mean?",
+a:"the way information is organized in a text",
+options:["the way information is organized in a text","the number of pictures","the font size","the author’s name only"],
+e:"Қазақша: text structure ақпараттың қалай ұйымдасқанын көрсетеді. Русский: text structure is how information is organized."
+},
+{
+q:"Which structure presents events in time order?",
+a:"chronology",
+options:["chronology","contrast","definition only","random order"],
+e:"Қазақша: chronology оқиғаларды уақыт ретімен береді. Русский: chronology presents events in time order."
+},
+{
+q:"What is an implication?",
+a:"a meaning suggested but not directly stated",
+options:["a meaning suggested but not directly stated","a direct title","a spelling rule","a copied sentence"],
+e:"Қазақша: implication тура айтылмайды, бірақ мәтіннен шығады. Русский: implication is suggested, not directly stated."
+},
+{
+q:"Which phrase shows time sequence?",
+a:"eventually",
+options:["eventually","however","although","in contrast"],
+e:"Қазақша: eventually уақыт ретін көрсетеді. Русский: eventually shows sequence over time."
+},
+{
+q:"Choose the best reduced time clause:",
+a:"After completing the mission, the crew returned.",
+options:["After completing the mission, the crew returned.","After they completing the mission, the crew returned.","After complete mission, crew returned.","After to complete, they returned."],
+e:"Қазақша: After + -ing reduced time clause ретінде дұрыс. Русский: after + -ing forms a reduced time clause."
+},
+{
+q:"What should a biography usually include?",
+a:"key events, achievements and impact",
+options:["key events, achievements and impact","only random dates","only the writer’s opinion","only one quotation"],
+e:"Қазақша: biography key events және achievements көрсетуі керек. Русский: biography includes key events and achievements."
+},
+{
+q:"Which order is most common in a biography?",
+a:"chronological order",
+options:["chronological order","alphabetical order","random order","question order"],
+e:"Қазақша: biography көбіне time order бойынша жазылады. Русский: biographies are usually chronological."
+},
+{
+q:"Which sentence shows impact?",
+a:"Her research changed the way scientists understood space travel.",
+options:["She was born in 1965.","She studied physics.","Her research changed the way scientists understood space travel.","She moved to another city."],
+e:"Қазақша: impact адамның жұмысының әсерін көрсетеді. Русский: this sentence shows the effect of her work."
+},
+{
+q:"Which phrase is useful for biography writing?",
+a:"During her early career,...",
+options:["During her early career,...","Anyway, she was cool.","Stuff happened.","Maybe whatever."],
+e:"Қазақша: formal time phrase biography үшін пайдалы. Русский: this is a useful formal time expression."
+},
+{
+q:"What is legacy in academic writing?",
+a:"the long-term influence someone leaves behind",
+options:["the long-term influence someone leaves behind","a short email","a grammar mistake","a single hobby"],
+e:"Қазақша: legacy — адамның ұзақ мерзімді ықпалы. Русский: legacy means long-term influence."
+}
+]
+},
+{
+id:"unit8",
+title:"Unit 8 — Change",
+theme:"Change, adaptation, categorizing information, synthesis, comparison",
+desc:"Must-know skills: categorizing information, synthesizing ideas, comparing sources, using parallel structures, and writing a compare-and-contrast essay.",
+kazakh:`
+<h3>Қазақша қысқаша түсіндіру</h3>
+
+<p><b>Unit 8 — Change</b> өзгеріс, adaptation және society/technology change тақырыптарына негізделген. Негізгі мақсат — information categorizing және synthesis жасау.</p>
+
+<ul>
+<li><b>Reading skill:</b> categorizing information — ақпаратты topic, cause, effect, example, solution сияқты топтарға бөлу.</li>
+<li><b>Critical thinking:</b> synthesis — бірнеше source немесе idea-ны біріктіріп, жаңа түсінік жасау.</li>
+<li><b>Reading skill:</b> comparing sources — екі мәтіннің similarity және difference жақтарын табу.</li>
+<li><b>Language development:</b> comparison phrases: <i>similarly</i>, <i>likewise</i>, <i>in contrast</i>, <i>whereas</i>, <i>unlike</i>.</li>
+<li><b>Grammar:</b> parallel structure — бірдей grammatical pattern қолдану: <i>to adapt, to learn and to improve</i>.</li>
+<li><b>Writing skill:</b> compare-and-contrast essay екі нәрсені салыстырады. Structure: point-by-point немесе block organization.</li>
+</ul>
+`,
+russian:`
+<h3>Краткое русское объяснение</h3>
+
+<p><b>Unit 8 — Change</b> связан с изменениями, адаптацией и сравнением идей. Главные навыки — categorizing information, synthesizing ideas и compare-and-contrast writing.</p>
+
+<ul>
+<li><b>Reading skill:</b> categorizing information — распределять информацию по группам: topic, cause, effect, example, solution.</li>
+<li><b>Critical thinking:</b> synthesis — соединять идеи из разных источников и делать общий вывод.</li>
+<li><b>Reading skill:</b> comparing sources — находить similarities and differences между двумя текстами.</li>
+<li><b>Language development:</b> comparison phrases: <i>similarly</i>, <i>likewise</i>, <i>in contrast</i>, <i>whereas</i>, <i>unlike</i>.</li>
+<li><b>Grammar:</b> parallel structure означает одинаковую грамматическую форму в списке или сравнении.</li>
+<li><b>Writing skill:</b> compare-and-contrast essay сравнивает две идеи/явления через point-by-point или block organization.</li>
+</ul>
+`,
+mustknow:[
+"Categorizing = grouping information logically",
+"Categories: cause, effect, example, solution",
+"Synthesis = combining ideas from sources",
+"Comparison: similarity and difference",
+"similarly / likewise = similarity",
+"whereas / unlike / in contrast = difference",
+"Parallel structure improves clarity",
+"Compare-and-contrast essay needs clear criteria",
+"Point-by-point structure compares one aspect at a time",
+"Block structure discusses one subject then the other"
+],
+questions:[
+{
+q:"What does categorizing information mean?",
+a:"grouping information by type or function",
+options:["grouping information by type or function","copying every sentence","ignoring headings","removing examples"],
+e:"Қазақша: categorizing ақпаратты топтарға бөледі. Русский: categorizing means grouping information logically."
+},
+{
+q:"Which category would 'because of rapid urbanization' belong to?",
+a:"cause",
+options:["cause","effect","example","conclusion only"],
+e:"Қазақша: because of cause көрсетеді. Русский: because of introduces a cause."
+},
+{
+q:"What is synthesis?",
+a:"combining ideas from different sources",
+options:["combining ideas from different sources","copying one source","using no evidence","listing words randomly"],
+e:"Қазақша: synthesis бірнеше idea/source біріктіреді. Русский: synthesis combines information from sources."
+},
+{
+q:"Which phrase shows similarity?",
+a:"similarly",
+options:["similarly","whereas","unlike","in contrast"],
+e:"Қазақша: similarly ұқсастық көрсетеді. Русский: similarly signals similarity."
+},
+{
+q:"Which phrase shows difference?",
+a:"whereas",
+options:["whereas","likewise","similarly","also"],
+e:"Қазақша: whereas contrast береді. Русский: whereas shows contrast."
+},
+{
+q:"Which sentence uses parallel structure?",
+a:"The program aims to educate, to support and to inspire students.",
+options:["The program aims to educate, to support and to inspire students.","The program aims to educate, supporting and inspiration.","The program aims education, to support and inspiring.","The program aims to educate, support and inspiration."],
+e:"Қазақша: барлық verbs бір pattern бойынша берілген. Русский: parallel structure uses the same grammatical form."
+},
+{
+q:"What does a compare-and-contrast essay do?",
+a:"explains similarities and differences",
+options:["explains similarities and differences","only tells a story","only gives definitions","only lists dates"],
+e:"Қазақша: compare-and-contrast similarity/difference түсіндіреді. Русский: it compares similarities and differences."
+},
+{
+q:"What is point-by-point organization?",
+a:"comparing one aspect of both subjects at a time",
+options:["comparing one aspect of both subjects at a time","writing without paragraphs","copying one source","discussing only the conclusion"],
+e:"Қазақша: point-by-point әр аспект бойынша салыстырады. Русский: it compares one point at a time."
+},
+{
+q:"Which is a useful comparison criterion?",
+a:"cost",
+options:["cost","random spelling","page colour","font type"],
+e:"Қазақша: cost comparison criterion бола алады. Русский: cost can be a criterion for comparison."
+},
+{
+q:"Which sentence synthesizes two ideas?",
+a:"Both authors suggest that adaptation is necessary, but they explain it in different contexts.",
+options:["Both authors suggest that adaptation is necessary, but they explain it in different contexts.","Author A is long.","I copied the text.","The article has pages."],
+e:"Қазақша: sentence екі source идеясын біріктіреді. Русский: it combines and compares ideas from two authors."
+}
+]
+},
+  {
+id:"unit9",
+title:"Unit 9 — Flow",
+theme:"Water, systems, processes, diagrams, cause and effect",
+desc:"Must-know skills: understanding process texts, identifying cause and effect, using sequencing language, describing diagrams, and writing process explanations.",
+kazakh:`
+<h3>Қазақша қысқаша түсіндіру</h3>
+
+<p><b>Unit 9 — Flow</b> су, табиғи жүйелер, процесс және cause/effect байланысына негізделген. Негізгі мақсат — process text түсіну және diagram/flow chart бойынша түсіндіре алу.</p>
+
+<ul>
+<li><b>Reading skill:</b> process text оқығанда first stage, next stage, final result сияқты кезеңдерді табу керек.</li>
+<li><b>Critical thinking:</b> cause and effect — бір нәрсе неге болды және оның нәтижесі қандай екенін анықтау.</li>
+<li><b>Language development:</b> sequencing language процестің ретін көрсетеді: <i>first</i>, <i>then</i>, <i>after that</i>, <i>finally</i>, <i>as a result</i>.</li>
+<li><b>Language development:</b> passive voice process writing-та жиі қолданылады, өйткені action маңызды, actor маңызды емес: <i>Water is collected</i>, <i>The material is heated</i>.</li>
+<li><b>Writing skill:</b> diagram description жазғанда overview, stages, direction және result нақты беріледі.</li>
+<li><b>Writing task:</b> process explanation — процесті логикалық ретпен, қысқа әрі дәл сипаттау.</li>
+</ul>
+`,
+russian:`
+<h3>Краткое русское объяснение</h3>
+
+<p><b>Unit 9 — Flow</b> связан с водой, природными системами, процессами и причинно-следственными связями. Главные навыки — понимать process texts и описывать diagrams/flow charts.</p>
+
+<ul>
+<li><b>Reading skill:</b> в process text нужно находить stages: first stage, next stage, final result.</li>
+<li><b>Critical thinking:</b> cause and effect помогает понять, почему что-то происходит и к чему это приводит.</li>
+<li><b>Language development:</b> sequencing language показывает порядок процесса: <i>first</i>, <i>then</i>, <i>after that</i>, <i>finally</i>, <i>as a result</i>.</li>
+<li><b>Language development:</b> passive voice часто используется в process writing, потому что важнее действие, а не исполнитель: <i>Water is collected</i>.</li>
+<li><b>Writing skill:</b> diagram description должен включать overview, stages, direction and result.</li>
+<li><b>Writing task:</b> process explanation описывает процесс логично и по порядку.</li>
+</ul>
+`,
+mustknow:[
+"Process text explains stages",
+"Look for first, next, finally",
+"Cause = reason something happens",
+"Effect = result of an action",
+"as a result / therefore = effect",
+"because / due to = cause",
+"Passive voice is common in process writing",
+"Diagram description needs overview",
+"Describe stages in logical order",
+"Use clear sequencing language"
+],
+questions:[
+{
+q:"What is the main purpose of a process text?",
+a:"to explain how something happens step by step",
+options:["to explain how something happens step by step","to tell a personal story only","to argue without evidence","to list random facts"],
+e:"Қазақша: process text кезең-кезеңімен түсіндіреді. Русский: a process text explains stages in order."
+},
+{
+q:"Which phrase shows sequence?",
+a:"after that",
+options:["after that","although","in contrast","whereas"],
+e:"Қазақша: after that келесі кезеңді көрсетеді. Русский: after that signals sequence."
+},
+{
+q:"Which phrase shows effect?",
+a:"as a result",
+options:["as a result","because of","although","despite"],
+e:"Қазақша: as a result нәтиже көрсетеді. Русский: as a result introduces an effect."
+},
+{
+q:"Which phrase shows cause?",
+a:"due to",
+options:["due to","finally","therefore","as a result"],
+e:"Қазақша: due to себеп көрсетеді. Русский: due to introduces a cause."
+},
+{
+q:"Why is passive voice common in process writing?",
+a:"because the action is more important than the person doing it",
+options:["because the action is more important than the person doing it","because it is always informal","because it removes grammar","because it is only for questions"],
+e:"Қазақша: process writing-та action маңызды. Русский: passive focuses on the action or process."
+},
+{
+q:"Choose the correct passive sentence:",
+a:"Water is collected in large tanks.",
+options:["Water is collected in large tanks.","Water collects someone.","Collected water is someone.","Water collecting by tanks."],
+e:"Қазақша: is collected passive voice дұрыс. Русский: is collected is correct passive form."
+},
+{
+q:"What should a diagram description include first?",
+a:"an overview of the whole process",
+options:["an overview of the whole process","personal opinion","unrelated examples","a copied paragraph"],
+e:"Қазақша: алдымен жалпы overview керек. Русский: start with an overview."
+},
+{
+q:"Which sentence describes a stage clearly?",
+a:"First, the water is filtered through sand.",
+options:["First, the water is filtered through sand.","Water nice.","Maybe the diagram is long.","I like the process."],
+e:"Қазақша: first + passive process stage көрсетеді. Русский: it clearly describes a stage."
+},
+{
+q:"Which word is useful for the final stage of a process?",
+a:"finally",
+options:["finally","whereas","although","however"],
+e:"Қазақша: finally соңғы кезеңді көрсетеді. Русский: finally introduces the last stage."
+},
+{
+q:"What is the difference between cause and effect?",
+a:"cause is the reason; effect is the result",
+options:["cause is the reason; effect is the result","cause is the result; effect is the title","they are the same","effect is always an example"],
+e:"Қазақша: cause — себеп, effect — нәтиже. Русский: cause is why; effect is what happens."
+}
+]
+},
+{
+id:"unit10",
+title:"Unit 10 — Conflict",
+theme:"Conflict, disagreement, solutions, evaluating arguments, academic conclusions",
+desc:"Must-know skills: evaluating arguments, identifying solutions, concession and counterargument, concluding essays, and writing balanced academic responses.",
+kazakh:`
+<h3>Қазақша қысқаша түсіндіру</h3>
+
+<p><b>Unit 10 — Conflict</b> disagreement, conflict, solution және academic argument тақырыптарына негізделген. Негізгі мақсат — argument бағалау және balanced conclusion жазу.</p>
+
+<ul>
+<li><b>Reading skill:</b> evaluating arguments — claim, evidence, logic және counterargument бар-жоғын тексеру.</li>
+<li><b>Critical thinking:</b> conflict мәтінінде екі жақтың да position-ын түсіну маңызды. Бір жақты ғана қарау weak analysis болады.</li>
+<li><b>Language development:</b> concession қарсы ойды мойындайды: <i>Although this view is reasonable...</i>, <i>While some argue that...</i></li>
+<li><b>Language development:</b> counterargument — қарсы пікірге жауап беру: <i>However, this does not mean that...</i></li>
+<li><b>Writing skill:</b> conclusion жаңа evidence қоспайды; main points қысқаша жинақтап, final position береді.</li>
+<li><b>Writing task:</b> balanced academic response екі жақты да қарастырып, дәлелді қорытынды береді.</li>
+</ul>
+`,
+russian:`
+<h3>Краткое русское объяснение</h3>
+
+<p><b>Unit 10 — Conflict</b> связан с конфликтом, несогласием, поиском решений и academic argument. Главные навыки — оценивать аргументы и писать balanced conclusion.</p>
+
+<ul>
+<li><b>Reading skill:</b> evaluating arguments означает проверить claim, evidence, logic and counterargument.</li>
+<li><b>Critical thinking:</b> в теме conflict важно понять обе стороны, иначе анализ будет односторонним.</li>
+<li><b>Language development:</b> concession признаёт противоположную точку зрения: <i>Although this view is reasonable...</i></li>
+<li><b>Language development:</b> counterargument отвечает на противоположную точку зрения: <i>However, this does not mean that...</i></li>
+<li><b>Writing skill:</b> conclusion не добавляет новые evidence; он кратко суммирует main points и даёт final position.</li>
+<li><b>Writing task:</b> balanced academic response рассматривает обе стороны и делает обоснованный вывод.</li>
+</ul>
+`,
+mustknow:[
+"Evaluate argument: claim, evidence, logic",
+"Strong argument includes counterargument",
+"Conflict analysis should consider both sides",
+"Concession accepts part of the opposite view",
+"Counterargument responds to the opposite view",
+"Although / while = concession",
+"However / nevertheless = contrast",
+"Conclusion summarizes main points",
+"Do not add new evidence in conclusion",
+"Balanced response gives a clear final position"
+],
+questions:[
+{
+q:"What should you check when evaluating an argument?",
+a:"claim, evidence and logic",
+options:["claim, evidence and logic","font and colour only","number of commas","the author’s photo"],
+e:"Қазақша: argument бағалағанда claim, evidence, logic маңызды. Русский: argument evaluation checks claim, evidence and logic."
+},
+{
+q:"What is a counterargument?",
+a:"a response to an opposing view",
+options:["a response to an opposing view","a repeated title","a grammar list","a direct copy"],
+e:"Қазақша: counterargument қарсы пікірге жауап береді. Русский: a counterargument responds to an opposing argument."
+},
+{
+q:"Which word introduces concession?",
+a:"although",
+options:["although","therefore","as a result","because"],
+e:"Қазақша: although қарсы ойды мойындайды. Русский: although introduces concession."
+},
+{
+q:"Which phrase introduces a counterargument?",
+a:"However, this does not mean that...",
+options:["However, this does not mean that...","For example only...","The title is...","In 1999..."],
+e:"Қазақша: however қарсы жауап беруге көмектеседі. Русский: however introduces contrast or counterargument."
+},
+{
+q:"What should a conclusion avoid?",
+a:"introducing completely new evidence",
+options:["introducing completely new evidence","summarizing main points","giving final position","using formal language"],
+e:"Қазақша: conclusion жаңа evidence қоспайды. Русский: conclusions should not introduce new evidence."
+},
+{
+q:"What is a balanced academic response?",
+a:"a response that considers more than one side",
+options:["a response that considers more than one side","a response with no evidence","a response with only emotions","a response without structure"],
+e:"Қазақша: balanced response екі жақты қарастырады. Русский: balanced writing considers multiple sides."
+},
+{
+q:"Which sentence is balanced?",
+a:"Although strict rules may reduce conflict, they can also limit personal freedom.",
+options:["Although strict rules may reduce conflict, they can also limit personal freedom.","Strict rules are always perfect.","Freedom is always bad.","Conflict has no causes."],
+e:"Қазақша: although екі жақты көрсетеді. Русский: it acknowledges both sides."
+},
+{
+q:"Which phrase is useful in a conclusion?",
+a:"Overall, the evidence suggests that...",
+options:["Overall, the evidence suggests that...","New evidence now appears...","I forgot to mention...","Randomly speaking..."],
+e:"Қазақша: Overall conclusion үшін formal phrase. Русский: this phrase is appropriate for a conclusion."
+},
+{
+q:"What makes an argument weak?",
+a:"a claim without evidence",
+options:["a claim without evidence","clear evidence","logical reasoning","balanced discussion"],
+e:"Қазақша: evidence жоқ claim weak болады. Русский: unsupported claims are weak."
+},
+{
+q:"Which word shows contrast?",
+a:"nevertheless",
+options:["nevertheless","because","therefore","for example"],
+e:"Қазақша: nevertheless contrast көрсетеді. Русский: nevertheless signals contrast."
+}
+]
+},
