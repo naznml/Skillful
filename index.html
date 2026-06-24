@@ -319,10 +319,51 @@ h2{
     padding:6px 10px;
   }
 }
+
+/* KZ/RU DISPLAY SWITCH — ORIGINAL CONTENT PRESERVED */
+.lang-switch{
+  position:fixed;
+  right:14px;
+  bottom:14px;
+  z-index:100;
+  display:flex;
+  gap:8px;
+  background:rgba(255,255,255,.96);
+  border:1px solid #fbcfe8;
+  border-radius:999px;
+  padding:8px;
+  box-shadow:0 12px 30px rgba(15,23,42,.18);
+}
+.lang-switch button{
+  border:0;
+  border-radius:999px;
+  padding:9px 14px;
+  font-weight:900;
+  cursor:pointer;
+  background:#fdf2f8;
+  color:#9d174d;
+}
+.lang-switch button.active{
+  background:linear-gradient(135deg,#be185d,#db2777);
+  color:white;
+}
+body.lang-kz .ru-only{display:none!important;}
+body.lang-ru .kz-only{display:none!important;}
+body.lang-kz .langbox .lang:nth-child(2){display:none!important;}
+body.lang-ru .langbox .lang:nth-child(1){display:none!important;}
+body.lang-kz .langbox,
+body.lang-ru .langbox{grid-template-columns:1fr!important;}
+
 </style>
 </head>
 
-<body>
+<body class="lang-kz">
+
+<div class="lang-switch" aria-label="Language switcher">
+  <button type="button" id="btnKz" class="active" onclick="setLang('kz')">ҚАЗ</button>
+  <button type="button" id="btnRu" onclick="setLang('ru')">РУС</button>
+</div>
+
 
 <div class="bg">
   <span>📚</span>
@@ -358,6 +399,49 @@ h2{
 <main class="wrap" id="app"></main>
 
 <script>
+
+/* KZ/RU DISPLAY SWITCH — DATA NOT CHANGED */
+function currentSiteLang(){
+  return document.body.classList.contains('lang-ru') ? 'ru' : 'kz';
+}
+function splitExplanationByLang(text){
+  const s = String(text || '');
+  const kzMark = 'Қазақша:';
+  const ruMark = 'Русский:';
+  const kzIndex = s.indexOf(kzMark);
+  const ruIndex = s.indexOf(ruMark);
+
+  if(kzIndex !== -1 && ruIndex !== -1){
+    const kzPart = s.slice(kzIndex, ruIndex).trim();
+    const ruPart = s.slice(ruIndex).trim();
+    return currentSiteLang() === 'ru' ? ruPart : kzPart;
+  }
+  return s;
+}
+function setLang(lang){
+  document.body.classList.toggle('lang-kz', lang === 'kz');
+  document.body.classList.toggle('lang-ru', lang === 'ru');
+  const kz=document.getElementById('btnKz');
+  const ru=document.getElementById('btnRu');
+  if(kz) kz.classList.toggle('active', lang === 'kz');
+  if(ru) ru.classList.toggle('active', lang === 'ru');
+  localStorage.setItem('siteLang', lang);
+  document.querySelectorAll('.result').forEach(el=>{ el.innerHTML=''; });
+}
+function markLanguageBoxes(){
+  document.querySelectorAll('.langbox').forEach(box=>{
+    const cols = box.querySelectorAll('.lang');
+    if(cols[0]) cols[0].classList.add('kz-only');
+    if(cols[1]) cols[1].classList.add('ru-only');
+  });
+}
+document.addEventListener('DOMContentLoaded', function(){
+  setLang(localStorage.getItem('siteLang') || 'kz');
+  markLanguageBoxes();
+});
+setTimeout(markLanguageBoxes, 500);
+
+
 const DATA = [
 {
 id:"unit1",
